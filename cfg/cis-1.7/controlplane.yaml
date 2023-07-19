@@ -48,7 +48,5 @@ groups:
           确保审计策略覆盖了以下几个场景,
           - 访问集群Secrets. 应注意仅记录对 Secrets、ConfigMaps 和 TokenReviews 的请求的元数据，以避免记录敏感数据的风险.
           - Pod和Deployment对象的修改.
-          - Use of `pods/exec`, `pods/portforward`, `pods/proxy` and `services/proxy`.
-          For most requests, minimally logging at the Metadata level is recommended
-          (the most basic level of logging).
+          - 使用 `pods/exec`, `pods/portforward`, `pods/proxy` and `services/proxy`.对于大部分请求记录下推荐记录下元数据Metadata
         scored: false

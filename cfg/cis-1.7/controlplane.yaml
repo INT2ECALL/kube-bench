@@ -38,19 +38,16 @@ groups:
             - flag: "--audit-policy-file"
               set: true
         remediation: |
-          Create an audit policy file for your cluster.
+          为集群创建审计策略.
         scored: false
 
       - id: 3.2.2
-        text: "Ensure that the audit policy covers key security concerns (Manual)"
+        text: "确保审计策略覆盖了关键安全问题(手动)"
         type: "manual"
         remediation: |
-          Review the audit policy provided for the cluster and ensure that it covers
-          at least the following areas,
-          - Access to Secrets managed by the cluster. Care should be taken to only
-            log Metadata for requests to Secrets, ConfigMaps, and TokenReviews, in
-            order to avoid risk of logging sensitive data.
-          - Modification of Pod and Deployment objects.
+          确保审计策略覆盖了以下几个场景,
+          - 访问集群Secrets. 应注意仅记录对 Secrets、ConfigMaps 和 TokenReviews 的请求的元数据，以避免记录敏感数据的风险.
+          - Pod和Deployment对象的修改.
           - Use of `pods/exec`, `pods/portforward`, `pods/proxy` and `services/proxy`.
           For most requests, minimally logging at the Metadata level is recommended
           (the most basic level of logging).

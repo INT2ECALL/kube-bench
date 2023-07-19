@@ -2,32 +2,29 @@
 controls:
 version: "cis-1.7"
 id: 3
-text: "Control Plane Configuration"
+text: "控制面板配置"
 type: "controlplane"
 groups:
   - id: 3.1
-    text: "Authentication and Authorization"
+    text: "验证和授权"
     checks:
       - id: 3.1.1
-        text: "Client certificate authentication should not be used for users (Manual)"
+        text: "不应将客户端证书身份验证用于用户(手动)"
         type: "manual"
         remediation: |
-          Alternative mechanisms provided by Kubernetes such as the use of OIDC should be
-          implemented in place of client certificates.
+          Kubernetes 提供了相应的替代机制，例如使用 OIDC 代替客户端证书.
         scored: false
       - id: 3.1.2
-        text: "Service account token authentication should not be used for users (Manual)"
+        text: "服务账户不应被用户直接使用 (手动)"
         type: "manual"
         remediation: |
-          Alternative mechanisms provided by Kubernetes such as the use of OIDC should be implemented
-          in place of service account tokens.
+         Kubernetes 提供了相应的替代机制，例如使用 OIDC 代替服务账户.
         scored: false
       - id: 3.1.3
-        text: "Bootstrap token authentication should not be used for users (Manual)"
+        text: "不应用于用户引导令牌身份验证 (手动)"
         type: "manual"
         remediation: |
-          Alternative mechanisms provided by Kubernetes such as the use of OIDC should be implemented
-          in place of bootstrap tokens.
+          Kubernetes 提供了相应的替代机制，例如使用 OIDC 代替引导令牌.
         scored: false
 
   - id: 3.2
